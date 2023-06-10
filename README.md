@@ -1,3 +1,3 @@
-# AstrologyBrawl
+# Astral Oneshot!
 
-Multiplayer Platform Fighter
+Multiplayer FPS
