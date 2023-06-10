@@ -59,7 +59,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
         hash.Add("kills", kills);
         hash.Add("deaths", deaths);
         PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
-        targetGroup = GameObject.FindGameObjectWithTag("targetGroup").GetComponent<addPlayersToFollow>();
+        //targetGroup = GameObject.FindGameObjectWithTag("targetGroup").GetComponent<addPlayersToFollow>();
         if (!PV.IsMine)
         {
             PPV.enabled = false;
@@ -83,11 +83,13 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     {
         if (PV.IsMine)
         {
+            /*
             healthItem.UpdateCooldown(PlayerController.AbilityOneCurrCooldown, PlayerController.AbilityTwoCurrCooldown);
             Health health = controller.GetComponent<PlayerHealth>();
             float percent = health.currentHealth / health.getMaxHealth();
             float currentIntensity = Mathf.Lerp(maxIntensity, 0, percent);
             vig.intensity.Override(currentIntensity);
+            */
         }
     }
 
@@ -100,15 +102,18 @@ public class PlayerManager : MonoBehaviourPunCallbacks
         }
         int randomNumber = Random.Range(0, spawnPoints.Count);
         Transform spawnPoint = spawnPoints[randomNumber];
-        //Debug.Log("AVATAR NUMBER " + (int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]);
+
         GameObject playerToSpawn = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
         controller = PhotonNetwork.Instantiate(playerToSpawn.name, spawnPoint.position, Quaternion.identity, 0, new object[] { PV.ViewID });
-        PV.RPC(nameof(RPC_UpdateCamera), RpcTarget.All);
+        
         PlayerController = controller.GetComponent<playerController>();
         ShieldHealth = controller.transform.GetComponentInChildren<shieldHealth>();
+
+        /*
         healthItem.SetShieldHealth(ShieldHealth);
         healthItem.SetMaxCooldowns(PlayerController.AbilityOneMaxCooldown, PlayerController.AbilityTwoMaxCooldown);
         healthItem.ActivateTimers();
+        */
 
        
     }
@@ -279,12 +284,12 @@ public class PlayerManager : MonoBehaviourPunCallbacks
                 isKing = false;
             }
         }
-        controller?.GetComponent<playerController>().ToggleCrown(isKing);
+        //controller?.GetComponent<playerController>().ToggleCrown(isKing);
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
-        healthHUDManager.UpdateFrames();
+        //healthHUDManager.UpdateFrames();
     }
 
 }

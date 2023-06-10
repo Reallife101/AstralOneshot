@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scrapyard Scuffle.unity
     guid: e72c02aaaed9c064a87a55275167986d
+  - enabled: 1
+    path: Assets/Scenes/FPSTest.unity
+    guid: 025c83f56211f1142bf33031d811c37e
   m_configObjects: {}

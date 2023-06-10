@@ -12,7 +12,7 @@ public class CountdownManager : MonoBehaviourPunCallbacks
     [SerializeField] GameObject loadingScreen;
 
     ExitGames.Client.Photon.Hashtable ht;
-    playerController[] playerControllerList;
+    PlayerMovement[] playerControllerList;
 
     double timerIncrementValue;
     double startTime;
@@ -44,14 +44,14 @@ public class CountdownManager : MonoBehaviourPunCallbacks
 
     private void FixedUpdate()
     {
-        playerControllerList = FindObjectsOfType<playerController>();
+        playerControllerList = FindObjectsOfType<PlayerMovement>();
 
         if (playerControllerList.Length > playerCount)
         {
             playerCount = playerControllerList.Length;
             
             // Disable playercontroler to stop movement
-            foreach (playerController pc in playerControllerList)
+            foreach (PlayerMovement pc in playerControllerList)
             {
                 pc.enabled = false;
             }
@@ -92,7 +92,7 @@ public class CountdownManager : MonoBehaviourPunCallbacks
                 //Unfreeze the players
                 if (playersFrozen)
                 {
-                    foreach (playerController pc in playerControllerList)
+                    foreach (PlayerMovement pc in playerControllerList)
                     {
                         pc.enabled = true;
                     }
