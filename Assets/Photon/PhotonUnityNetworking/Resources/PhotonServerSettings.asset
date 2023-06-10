@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3758f8f58fdef43803eb9be1df0608, type: 3}
+  m_Name: PhotonServerSettings
+  m_EditorClassIdentifier: 
+  AppSettings:
+    AppIdRealtime: 3d424a4a-5e0b-4dda-8d92-19ba0b978286
+    AppIdFusion: 
+    AppIdChat: 
+    AppIdVoice: 
+    AppVersion: 
+    UseNameServer: 1
+    FixedRegion: 
+    Server: 
+    Port: 0
+    ProxyServer: 
+    Protocol: 0
+    EnableProtocolFallback: 1
+    AuthMode: 0
+    EnableLobbyStatistics: 0
+    NetworkLogging: 1
+  DevRegion: usw
+  PunLogging: 0
+  EnableSupportLogger: 0
+  RunInBackground: 1
+  StartInOfflineMode: 0
+  RpcList:
+  - ClickRpc
+  - DestroyRpc
+  - DestroySpaceship
+  - Fire
+  - RespawnSpaceship
+  - RPC_TakeDamage
+  - RPC_GetKill
+  - RPC_EndGame
+  - HitStunned
+  - RPC_Effect
+  - RPC_CallEffect
+  - RPC_UpdateCamera
+  - RPC_UpdateText
+  - RPC_SetKillGoal
+  - RPC_CreateHealthItem
+  - RPC_UpdateHealthItem
+  - RPC_UpdateHealthUI
+  - RPC_DecreaseHealthUI
+  - RPC_SetHealthUI
+  - RPC_SetPlayerName
+  - RPC_UpdateKillCount
+  - HealthRPC
+  - HealthOffRPC
+  - HealthOnRPC
+  - RPC_ScreenShake
+  - SyncKills
+  - RPC_HealDamage
+  - AddReadyUp
+  - SyncReadyUpText
+  - RPC_DisplayCard
+  - Jump
+  - Footsteps
+  - FastFall
+  - HeavyAttackCharge
+  - HeavyAttackRelease
+  - LightAttack
+  - Start
+  - Ability1
+  - Ability2
+  - DeathGeneric
+  - SpawnVoice
+  - TakeDamage
+  - MakeKillFeedRPC
+  - ZoomCamRPC
+  - DamageShake
+  - RPC_FoolTP
+  - RPC_HermitDisable
+  - RPC_MagicianDisable
+  - bringBack
+  - rebind
+  - toss
+  - RPC_DisplayLevel
+  - NextButtonClicked
+  - DeleteFrame
+  - hideSlayBanner
+  - showLoadingScreen
+  - showSlayBanner
+  - RPC_DevilBuff
+  - showcard
+  - CapDamage
+  - CapHeal
+  - CapJump
+  - CapSpeed
+  - RPC_ParticlesOn
+  - RPC_ParticlesOnDelay
+  - RPC_LoversInvincible
+  - RPC_LoversTarget
+  - RPC_DevilDamage
+  - RPC_DoJustice
+  - RPC_AddCardsToPool
+  DisableAutoOpenWizard: 1
+  ShowSettings: 0
+  DevRegionSetOnce: 1
