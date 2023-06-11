@@ -17,13 +17,4 @@ public class PlayerHealth : Health
         PhotonView.Find((int)myPV.InstantiationData[0]).GetComponent<PlayerManager>().Die();
     }
 
-    /*
-    private void Update()
-    {
-        if (lowHealthUI != null && currentHealth <= 20f)
-        {
-            lowHealthUI.SetActive(true);
-        }
-    }
-    */
 }

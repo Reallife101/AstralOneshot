@@ -123,14 +123,9 @@ public abstract class Health : MonoBehaviourPunCallbacks, IDamageable, IPunInsta
             return;
         }
 
-        if (gameObject.tag == "Player")
-        {
-            myPV.RPC("ZoomCamRPC", RpcTarget.All, damage);
-        }
-
         myPV.RPC("RPC_UpdateHealthUI", RpcTarget.All, damage);
         myPV.RPC("HitStunned", myPV.Owner, hitStunValue);
-        audioManager.CallTakeDamage();
+        //audioManager.CallTakeDamage();
         currentHealth -= damage;
 
         //apply Force if applicable
@@ -143,19 +138,19 @@ public abstract class Health : MonoBehaviourPunCallbacks, IDamageable, IPunInsta
         //if health below 0, die
         if (currentHealth <= 0)
         {
-            audioManager.CallDeathGeneric();
-            audioManager.CallSpawnVoice();
+            //audioManager.CallDeathGeneric();
+            //audioManager.CallSpawnVoice();
             //if you are not yourself or nothing, give them a kill
             if (info.Sender != null && info.Sender != PhotonNetwork.LocalPlayer)
             {
                 PlayerManager.Find(info.Sender).GetKill();
-                myPV.RPC("MakeKillFeedRPC", RpcTarget.All, info.Sender, PhotonNetwork.LocalPlayer);
+                //myPV.RPC("MakeKillFeedRPC", RpcTarget.All, info.Sender, PhotonNetwork.LocalPlayer);
             }
             //if you have been damaged previously, give them a kill
             else if (lastPlayer != null)
             {
                 PlayerManager.Find(lastPlayer).GetKill();
-                myPV.RPC("MakeKillFeedRPC", RpcTarget.All, lastPlayer, PhotonNetwork.LocalPlayer);
+                //myPV.RPC("MakeKillFeedRPC", RpcTarget.All, lastPlayer, PhotonNetwork.LocalPlayer);
             }
             Die();
         }
@@ -165,12 +160,6 @@ public abstract class Health : MonoBehaviourPunCallbacks, IDamageable, IPunInsta
         {
             lastPlayer = info.Sender;
         }
-    }
-
-    [PunRPC]
-    public void ZoomCamRPC(float damage)
-    {
-        ZoomCam.instance.ZoomIn(gameObject, damage);
     }
 
     [PunRPC]

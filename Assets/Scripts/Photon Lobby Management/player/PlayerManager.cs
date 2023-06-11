@@ -83,13 +83,13 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     {
         if (PV.IsMine)
         {
-            /*
-            healthItem.UpdateCooldown(PlayerController.AbilityOneCurrCooldown, PlayerController.AbilityTwoCurrCooldown);
+            
+            //healthItem.UpdateCooldown(PlayerController.AbilityOneCurrCooldown, PlayerController.AbilityTwoCurrCooldown);
             Health health = controller.GetComponent<PlayerHealth>();
             float percent = health.currentHealth / health.getMaxHealth();
             float currentIntensity = Mathf.Lerp(maxIntensity, 0, percent);
             vig.intensity.Override(currentIntensity);
-            */
+            
         }
     }
 
@@ -109,11 +109,11 @@ public class PlayerManager : MonoBehaviourPunCallbacks
         PlayerController = controller.GetComponent<playerController>();
         ShieldHealth = controller.transform.GetComponentInChildren<shieldHealth>();
 
-        /*
+        
         healthItem.SetShieldHealth(ShieldHealth);
-        healthItem.SetMaxCooldowns(PlayerController.AbilityOneMaxCooldown, PlayerController.AbilityTwoMaxCooldown);
-        healthItem.ActivateTimers();
-        */
+        //healthItem.SetMaxCooldowns(PlayerController.AbilityOneMaxCooldown, PlayerController.AbilityTwoMaxCooldown);
+        //healthItem.ActivateTimers();
+        
 
        
     }

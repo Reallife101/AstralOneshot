@@ -111,7 +111,6 @@ public class PlayerMovement : MonoBehaviour
         if (myPV.IsMine)
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); //performs sphereCheck to see if the player is close enough to the ground to be considered grounded
-            Debug.Log(isGrounded);
             ceilingContest = Physics.CheckSphere(ceilingCheck.position, ceilingDistance);
 
             DelegateToggles();
