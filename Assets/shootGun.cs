@@ -9,6 +9,7 @@ public class shootGun : MonoBehaviour
     [SerializeField] private PhotonView myPV;
 
     [SerializeField] private GameObject impactEffect;
+    [SerializeField] private ParticleSystem muzzleFlash;
 
     [SerializeField] private float range = 100f;
     [SerializeField] private float fireRate = .75f;
@@ -30,17 +31,18 @@ public class shootGun : MonoBehaviour
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
+            muzzleFlash.Play();
         }
     }
 
     void Shoot()
     {
         RaycastHit hit;
-        Debug.Log("fire");
+
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.collider.gameObject.name);
             hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(gunDamage);
+            GameObject pro = PhotonNetwork.Instantiate(impactEffect.name, hit.point, Quaternion.LookRotation(hit.normal));
         }
 
     }
